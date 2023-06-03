@@ -1,0 +1,33 @@
+{
+  "name": "nx-mfe-yup-error-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nx-mfe-yup-error-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/nx-mfe-yup-error-e2e/cypress.config.ts",
+        "devServerTarget": "nx-mfe-yup-error:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "nx-mfe-yup-error:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "nx-mfe-yup-error:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nx-mfe-yup-error-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["nx-mfe-yup-error"]
+}
