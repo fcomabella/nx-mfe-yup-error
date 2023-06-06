@@ -1,7 +1,6 @@
 const deps = require('../../package.json').dependencies;
 
 const sharedLibraries = new Set([
-  '@hookform/resolvers',
   'react',
   'react-dom',
   'react-hook-form',
