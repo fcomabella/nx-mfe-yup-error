@@ -11,9 +11,8 @@ const sharedLibraries = new Set([
 
 module.exports = {
   name: 'dashboard',
-  remotes: ['login'],
+  remotes: ['login', 'validated-form'],
   shared: (library, defaultConfig) => {
-    console.log(library);
     if (sharedLibraries.has(library)) {
       return {
         ...defaultConfig,

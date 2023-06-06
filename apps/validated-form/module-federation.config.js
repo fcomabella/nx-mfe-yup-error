@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'login',
+  name: 'validated-form',
   exposes: {
     './Module': './src/remote-entry.ts',
   },
